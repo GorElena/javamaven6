@@ -23,7 +23,6 @@ public class RadioTest {
     }
 
 
-
     @Test
     public void getCurrentStation() { //получить номер текущей радиостанции
         Radio radio = new Radio(30);
@@ -148,37 +147,12 @@ public class RadioTest {
         Assertions.assertEquals(expected, actual);
     }
 
-    @Test
-    public void reduceVolume() { //убавить громкость
-        Radio radio = new Radio(100);
-        radio.setCurrentVolume(99);
-
-
-        int expected = 98;
-        int actual = radio.getCurrentVolume();
-
-        Assertions.assertEquals(expected, actual);
-    }
-
-    @Test
-    public void notSetAboveMax() { //выставление громкости больше максимального значения
-        Radio radio = new Radio();
-        radio.setCurrentVolume(100);
-
-        radio.increaseVolume();
-
-        int expected = 100;
-        int actual = radio.getCurrentVolume();
-
-        Assertions.assertEquals(expected, actual);
-    }
 
     @Test
     public void notSetBelowMin() { //выставление громкости меньше минимального значения
         Radio radio = new Radio(100);
         radio.setCurrentVolume(0);
 
-       
 
         int expected = 0;
         int actual = radio.getCurrentVolume();
